@@ -1,6 +1,6 @@
 from turtle import Turtle
 
-starting_position = [(-20, 0), (0, 0), (20, 0)]
+starting_position = [(0, 0), (-20, 0), (-40, 0)]
 SNAKE_SPEED = 20
 UP = 90
 DOWN = 270
