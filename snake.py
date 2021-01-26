@@ -1,5 +1,6 @@
 from turtle import Turtle
 
+starting_position = [(-20, 0), (0, 0), (20, 0)]
 SNAKE_SPEED = 20
 UP = 90
 DOWN = 270
@@ -8,21 +9,23 @@ RIGHT = 0
 
 
 class Snake:
-    def __init__(self, starting_y):
-        """Starting y = starting point"""
-        self.width = starting_y
+    def __init__(self):
         self.segments = []
         self.create_snake()
         self.head = self.segments[0]
 
     def create_snake(self):
-        for _ in range(3):
-            square = Turtle('square')
-            square.penup()
-            square.goto(self.width, 0)
-            self.width += 20
-            self.segments.append(square)
-        
+        for position in starting_position:
+            self.add_segment(position)
+
+    def add_segment(self, position):
+        square = Turtle('square')
+        square.penup()
+        square.goto(position)
+        self.segments.append(square)
+
+    # def extend(self):
+    #     self.add_segment()
 
     def move(self):
         for seg_num in range(len(self.segments) - 1, 0, -1):

@@ -1,5 +1,5 @@
-from turtle import Turtle
 from random import randint
+from turtle import Turtle
 
 
 class Food(Turtle):
@@ -11,7 +11,6 @@ class Food(Turtle):
         self.shapesize(0.5, 0.5)
         self.speed('fastest')
         self.refresh()
-
 
     def refresh(self):
         self.goto(randint(-280, 280), randint(-280, 280))
